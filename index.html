@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphic Design Internship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #f0faff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .background-shape {
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, #ffd6d6 0%, transparent 70%);
+      z-index: -1;
+      transform: rotate(30deg);
+      border-radius: 50%;
+    }
+
+    .card {
+      position: relative;
+      background: white;
+      padding: 30px;
+      max-width: 620px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      animation: floatCard 3s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871);
+      background-size: 300% 300%;
+      border-radius: 22px;
+      animation: animatedGradient 8s ease infinite;
+    }
+
+    @keyframes animatedGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      color: #ff6f61;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      margin-top: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #ffe0dc;
+      color: #d84315;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin: 5px 8px 0 0;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tag:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 12px;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .btn-apply {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6f61;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-apply:hover {
+      background: #e65c50;
+      transform: translateY(-3px);
+    }
+
+    .contact-icons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-btn {
+      background-color: #eee;
+      border-radius: 50%;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 18px;
+      color: #555;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .icon-btn:hover {
+      background-color: #ffdad6;
+      color: #d84315;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 26px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-shape"></div>
+
+  <div class="card">
+    <h2>Graphic Design Internship 🎨</h2>
+    <p>✨ Unleash your creativity and bring ideas to life!</p>
+    <p>🎯 Work on real branding projects—logos, social media creatives, digital campaigns, and more.</p>
+    <p>🛠️ Use tools like <strong>Illustrator, Photoshop, Figma</strong>, and <strong>Canva</strong>.</p>
+    <p>🌱 Learn from industry mentors and build a powerful design portfolio.</p>
+
+    <div class="tags">
+      <span class="tag" data-tooltip="Design, Layout, Typography">#GraphicDesign</span>
+      <span class="tag" data-tooltip="Hands-on learning opportunity">#Internship</span>
+      <span class="tag" data-tooltip="Creativity-focused role">#CreativeRole</span>
+      <span class="tag" data-tooltip="Adobe, Canva, Figma">#DesignTools</span>
+      <span class="tag" data-tooltip="Live projects, real clients">#RealProjects</span>
+    </div>
+
+    <a href="#" class="btn-apply">🚀 Apply Now</a>
+
+    <div class="contact-icons">
+      <a href="#" class="icon-btn" title="Email Us">📧</a>
+      <a href="#" class="icon-btn" title="Instagram">📸</a>
+      <a href="#" class="icon-btn" title="Behance">🎨</a>
+    </div>
+  </div>
+
+</body>
+</html>
